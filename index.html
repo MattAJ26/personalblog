@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Personal Blog Home</title>
+  </head>
+
+  <body>
+    <header>
+        <h1>Personal Blog Home</h2>
+    <div class="clearfix">
+      <div class="card">
+        <h2>Submit</h2>
+        <form method="POST" action="blog.html">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="janedoe" />
+          </div>
+          <div class="input-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" placeholder="title here" />
+          </div>
+          <div class="input-group">
+            <label for="content">Blog Content</label>
+            <input type="text" name="content" id="content" placeholder="type content here" />
+          </div>
+          <div id="msg"></div>
+          <button id="submit" onclick="open('blog.html')">Submit</button>
+        </form>
+      </div>
+
+    
+    <script src="./assets/js/logic.js"></script>
+  </body>
+</html>
