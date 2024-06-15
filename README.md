@@ -1,9 +1,15 @@
 # personalblog
 
-## what ive done
+## Blog
 
-created html, css, and js files
-created form that *should* submit to a new page with data stored in localstorage, but doesnt do this yet
+2 page blog post with:
+-local storage
+-link to my portfolio
+-dark mode toggle
+-back button
+-each blog post submitted is added to list of posted blog posts
+
+Link: 
 
 ## 04 Web APIs: Personal Blog
 

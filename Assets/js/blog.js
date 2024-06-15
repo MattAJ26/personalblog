@@ -1,27 +1,33 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const submittedBlogsDiv = document.getElementById('submittedBlogs');
+const blogposthistory = JSON.parse(localStorage.getItem("blogposts"))||[];
+const usernameInput = document.querySelector('#username');
+const titleInput = document.querySelector('#title');
+const contentInput = document.querySelector('#content');
+const blogposthistoryElement = document.querySelector('#blogposthistory');
 
-    function renderSubmittedBlogs() {
-        submittedBlogsDiv.innerHTML = '';
-
-        const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-        console.log(blogs);
-
-        if (blogs.length === 0) {
-            submittedBlogsDiv.innerHTML = '<p>No blogs submitted yet.</p>';
-            return;
-        }
-
-        blogs.forEach(function (blog) {
-            const blogDiv = document.createElement('div');
-            blogDiv.innerHTML = `
-                <h3>Title: ${blog.title}</h3>
-                <p><strong>By:</strong> ${blog.username}</p>
-                <p>${blog.content}</p>
-            `;
-            submittedBlogsDiv.appendChild(blogDiv);
-        });
+blogContent();
+function blogContent() {
+    for (let index = 0; index < blogposthistory.length; index++) {
+        let html = `<p>Username: ${blogposthistory[index].username}</p>
+        <p>Title: ${blogposthistory[index].title}</p>
+        <p>Content: ${blogposthistory[index].content}</p>`
+        blogposthistoryElement.insertAdjacentHTML("beforeend", html);     
     }
+    // let blogposts = JSON.parse(localStorage.getItem("blogposts"));
+    // const title = blogposts.title;
+    // const username = blogposts.username;
+    // console.log(title);
+    // const content = blogposts.content;
+  
+    // if (!username || !title || !content) {
+    //   return;
+    // }
+  
+    // usernameInput.textContent = username;
+    // titleInput.textContent = title;
+    // contentInput.textContent = content;
+  }
 
-    renderSubmittedBlogs();
-});
+function darkmode() {
+    const element = document.body;
+    element.classList.toggle("dark-mode");
+}
